@@ -20,7 +20,7 @@ definitions -- plotting, calculating mean, etc -- to run).
 
 ### Running the code
 Running the code is very simple: all you have to do is run `run_code_3D.py` and a series of prompts will follow
-in the terminal for you to fill out.
+in the terminal for you to fill out. **It is recommended to follow the default settings the first time you run the code.**
 
 The `__main__` will call all functions defined in `run_code_3D.py` depending on which are enabled from the user inputs, and the 
 simulation will run. The simulation will create new folders within the directory of the scripts. The folders are organized

@@ -293,9 +293,9 @@ def plot_3D_positions_one_timestep(stored_particles:np.ndarray, plot_index:int):
     ### end if statement
     fig.update_layout(
         scene = dict(
-            xaxis = dict(range=[0,particle_simulator.L],),
-                        yaxis = dict(range=[0,particle_simulator.L],),
-                        zaxis = dict(range=[0,particle_simulator.L],),))
+            xaxis = dict(range=[0,particle_simulator.length],),
+                        yaxis = dict(range=[0,particle_simulator.length],),
+                        zaxis = dict(range=[0,particle_simulator.length],),))
     fig.show()
 
 
