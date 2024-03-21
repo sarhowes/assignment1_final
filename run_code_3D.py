@@ -233,7 +233,7 @@ def store_plot_PCF_one_run(stored_particles:np.ndarray, run:float, cut_off:float
 
 def plot_kinetic_potential_energy(stored_particles:np.ndarray, run:float, cut_off:float):
     """Calculate, plot, and save the 3D total potential and kinetic energies of the simulation
-    over all time steps. Normalized to the initial total energy after equilibrium is reached.
+    over all time steps.
 
     Args:
         stored_particles (np.ndarray): full simulation data with all time steps
@@ -470,7 +470,7 @@ def simulation_setup():
         '==== Final setup parameters: =====\n'
         f'* number cubes: {number_cubes}\n'
         f'* number particles: {number_particles}\n'
-        f'* length: {length}\n'
+        f'* length (sigma): {length}\n'
         f'* time_step (units: sqrt(m*sigma^2/epsilon)): {time_step}\n'
         f'* number steps: {number_steps}\n'
         f'* tuning percent: {tuning_percent}\n'
