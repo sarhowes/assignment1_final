@@ -7,7 +7,7 @@ There are two main files for this code:
 
 **`definitions_3D.py`** includes a class called `Particle_Functions3D` that is imported into `run_code_3D.py`.
 It has all the functions that are used to calculate the next positions and velocities of all the 
-argon atoms due to interactions between surrounding pairs. It also includes functions that calculate
+argon atoms due to interactions with surrounding particles. It also includes functions that calculate
 the total kinetic and potential energies, as well as a function that sets up a histogram in order to 
 calculate the pair correlation function. There is no need to run this script separately, it is automatially
 imported and used in the second script.
@@ -26,7 +26,7 @@ The `__main__` will call all functions defined in `run_code_3D.py` depending on 
 simulation will run. The simulation will create new folders within the directory of the scripts. The folders are organized
 first based off phase of matter (solid, liquid, gas, or custom), then sub-folders will be created within these for each 
 of the runs that are performed. Two folders are also created to store the pressures calculated per run, as well as the
-pair correlation function values per run. These folders are referenced later to calculate the mean pressure and PCF. 
+pair correlation function (PCF) values per run. These folders are referenced later to calculate the mean pressure and PCF. 
 
 A typical directory will look like this:
 
