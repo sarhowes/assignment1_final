@@ -365,13 +365,13 @@ def mean_PCF_all_runs(pcf_path:str):
     if state == 'solid':
         color = 'forestgreen'
         edgecolor = 'darkgreen'
-    if state== 'liquid':
+    elif state== 'liquid':
         color = 'royalblue'
         edgecolor = 'mediumblue'
-    if state == 'gas':
+    elif state == 'gas':
         color = 'chocolate'
         edgecolor = 'saddlebrown'
-    if state == 'custom':
+    else:
         color = 'firebrick'
         edgecolor = 'maroon'
     plt.bar(bins_si, height=mean_pcf, width=width, align='edge', edgecolor=edgecolor, color=color)
@@ -448,8 +448,8 @@ def simulation_setup():
         number_cubes_one_direction = int(input('>> Input number of cubes to simulate in \none direction (number will be cubed):'))
         time_step = float(input('>> Input time step \n(time in units sqrt(m*sigma^2/epsilon)):'))
         number_steps = int(input('>> Input number of steps:'))
-        tuning_percent = float(input('>> Input percent of simulation to run equilibrium on:'))
-    if custom_setup == 'n':
+        tuning_percent = float(input('>> Input fraction of simulation to run equilibrium on:'))
+    elif custom_setup == 'n':
         number_cubes_one_direction = 3        
         time_step = 0.001
         number_steps = 1000
@@ -510,37 +510,7 @@ def choose_what_to_run(state:str):
     Returns:
         list of strings: strings are either `y` or `n`, indicating whether or not to run a particular function
     """
-    
-    # delete old files if exist
-    if os.path.exists(f'{state}/pressure_3D'):
-        delete_old_pressure_files = input('>> Old pressure files detected. Delete? (y/n):')
 
-        if delete_old_pressure_files == 'y':
-            old_pressure_files = glob.glob(f'{state}/pressure_3D/*')
-            print('removing old pressure files.')
-            for f in old_pressure_files:
-                os.remove(f)
-        elif delete_old_pressure_files == 'n':
-            pass
-        else:
-            print('Unknown command')
-            exit()
-
-    if os.path.exists(f'{state}/pair_correlation_function_3D'):
-        delete_old_pcf_files = input('>> Old pair correlation function files detected. Delete? (y/n):')
-
-        if delete_old_pcf_files == 'y':
-            old_pcf_files = glob.glob(f'{state}/pair_correlation_function_3D/*')
-            print('removing old PCF files.')
-            for f in old_pcf_files:
-                os.remove(f)
-        elif delete_old_pcf_files == 'n':
-            pass
-        else:
-            print('Unknown command')
-            exit()        
-
-    # choose what features to run
     number_runs = int(input('>> Input number of separate simulations to run:'))
 
     print(
@@ -637,7 +607,7 @@ if __name__ == "__main__":
 
         if run_plot_3D_position == 'on':
             print('plotting positions...')
-            plot_3D_positions_one_timestep(stored_particles, run=run_number, plot_index=0)
+            plot_3D_positions_one_timestep(stored_particles, plot_index=0)
     
     print('========== RUNS FINISHED ==========')
     if run_mean_pressure == 'on':
