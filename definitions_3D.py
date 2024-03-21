@@ -50,7 +50,6 @@ class Particle_Functions3D:
 
         Args:
             data (np.ndarray): current time step data
-            i (int): particle index
 
         Returns:
             float: total potential energy
@@ -67,8 +66,6 @@ class Particle_Functions3D:
 
         Args:
             data (np.ndarray): current time step data
-            i (int): particle 1 index
-            j (int): particle 2 index
 
         Returns:
             float: derivative of total potential energy
@@ -85,7 +82,6 @@ class Particle_Functions3D:
 
         Args:
             data (np.ndarray): current time step data
-            i (int): particle index
 
         Returns:
             float, float: force in x and y direction
@@ -111,7 +107,6 @@ class Particle_Functions3D:
         Args:
             data (np.ndarray): current time step data
             new_data (np.ndarray): new time step data
-            i (int): particle index
             time_step (float): size of time step
 
         Returns:
@@ -144,7 +139,6 @@ class Particle_Functions3D:
 
         Args:
             data (np.ndarray): data array for one time step
-            i (int): particle index
             time_step (float): size of time step
 
         Returns:
